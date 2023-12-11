@@ -1,13 +1,16 @@
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, FlatList } from 'react-native'
 import Header from '../components/Headers'
+import categories_data from '../data/categories_data.json'
 
-const CategoriesScreen = (title) => {
+const CategoriesScreen = () => {
     return (
         <>
         <Header title="Categorias"/>
-            <View style={styles.containers}>
-                <Text>Lista de Categorias</Text>
-            </View>
+        <FlatList
+            data={categories_data}
+            renderItem={renderCategoryItem}
+
+        ></FlatList>
         </>
     )
 }
@@ -15,5 +18,5 @@ const CategoriesScreen = (title) => {
 export default CategoriesScreen
 
 const styles = StyleSheet.create({
-    
+
 })

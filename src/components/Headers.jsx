@@ -16,5 +16,9 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#FF6700'
-    }    
+    }, 
+
+    headerTitle:{
+        color: '#fff'
+    }
 })
