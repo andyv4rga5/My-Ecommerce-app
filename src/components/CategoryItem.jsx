@@ -1,5 +1,6 @@
 import { Text, View, StyleSheet } from 'react-native'
 import Card from './Card'
+import { colors } from '../global/colors'
 
 const CategoryItem = ({ category }) => {
     return (
@@ -13,7 +14,7 @@ export default CategoryItem
 
 const styles = StyleSheet.create({
     cardContainer: {
-        backgroundColor: "#EBEBEB",
+        backgroundColor: colors.secondary,
         padding: 10,
         margin: 10,
     },
