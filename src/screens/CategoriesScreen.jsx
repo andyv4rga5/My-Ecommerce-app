@@ -2,6 +2,10 @@ import { View, Text, StyleSheet, FlatList } from 'react-native'
 import Header from '../components/Headers'
 import categories_data from '../data/categories_data.json'
 
+const renderCategoryItem = ({item})=> (
+    <Text>{item}</Text>
+)
+
 const CategoriesScreen = () => {
     return (
         <>
@@ -9,8 +13,8 @@ const CategoriesScreen = () => {
         <FlatList
             data={categories_data}
             renderItem={renderCategoryItem}
-
-        ></FlatList>
+            keyExtractor={item => item}
+        />
         </>
     )
 }
