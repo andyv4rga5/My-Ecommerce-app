@@ -1,20 +1,21 @@
 import { View, Text, StyleSheet, FlatList } from 'react-native'
 import Header from '../components/Headers'
 import categories_data from '../data/categories_data.json'
+import CategoryItem from '../components/CategoryItem'
 
-const renderCategoryItem = ({item})=> (
-    <Text>{item}</Text>
+const renderCategoryItem = ({ item }) => (
+    <CategoryItem category={item}/>
 )
 
 const CategoriesScreen = () => {
     return (
         <>
-        <Header title="Categorias"/>
-        <FlatList
-            data={categories_data}
-            renderItem={renderCategoryItem}
-            keyExtractor={item => item}
-        />
+            <Header title="Categorias" />
+            <FlatList
+                data={categories_data}
+                renderItem={renderCategoryItem}
+                keyExtractor={item => item}
+            />
         </>
     )
 }
