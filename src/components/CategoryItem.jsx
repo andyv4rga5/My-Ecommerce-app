@@ -13,16 +13,12 @@ export default CategoryItem
 
 const styles = StyleSheet.create({
     cardContainer: {
-        backgroundColor: "aqua",
-        marginHorizontal: 5,
-        marginVertical: 4,
-        paddingVertical: 30,
-        paddingleft: 5,
-        justifyContent: "flex-start",
-        alignItems: "flex-start",
+        backgroundColor: "#EBEBEB",
+        padding: 10,
+        margin: 10,
     },
     text: {
         textTransform: 'capitalize',
-        fontSize: 15,
+        fontSize: 17,
     }
 })

@@ -10,7 +10,7 @@ const renderCategoryItem = ({ item }) => (
 const CategoriesScreen = () => {
     return (
         <>
-            <Header title="Categorias" />
+            <Header title="CATEGORIAS" />
             <FlatList
                 data={categories_data}
                 renderItem={renderCategoryItem}
