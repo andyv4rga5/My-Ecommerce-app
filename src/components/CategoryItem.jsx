@@ -14,15 +14,15 @@ export default CategoryItem
 const styles = StyleSheet.create({
     cardContainer: {
         backgroundColor: "aqua",
-        // marginHorizontal: 5,
-        // marginVertical: 4,
-        // paddingVertical: 30,
-        // paddingleft: 5,
-        // justifyContent: "flex-start",
-        // alignItems: "flex-start",
+        marginHorizontal: 5,
+        marginVertical: 4,
+        paddingVertical: 30,
+        paddingleft: 5,
+        justifyContent: "flex-start",
+        alignItems: "flex-start",
     },
-    // text: {
-    //     textTransform: 'capitalize',
-    //     fontSize: 15,
-    // }
+    text: {
+        textTransform: 'capitalize',
+        fontSize: 15,
+    }
 })
