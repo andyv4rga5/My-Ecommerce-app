@@ -1,8 +1,8 @@
 import { View, StyleSheet } from 'react-native'
 
-const Card = (children) => {
+const Card = ({children, style}) => {
     return (
-        <View style={styles.container}>
+        <View style={{...styles.container, ...style}}>
             {children}
         </View>
     )
@@ -14,8 +14,8 @@ const styles = StyleSheet.create({
     container: {
         shadowColor: '#C0C0C0',
         shadowOffset: {
-            width: 3,
-            height: 5
+            height: 5,
+            width: 3
         },
         elevation: 5,
         shadowOpacity: 1,
