@@ -31,5 +31,6 @@ const styles = StyleSheet.create({
     },
     productImage: {
         width: 60,
+        height: 60
     }
 })

@@ -3,11 +3,13 @@ import Header from '../components/Headers'
 import categories_data from '../data/categories_data.json'
 import CategoryItem from '../components/CategoryItem'
 
-const renderCategoryItem = ({ item }) => (
-    <CategoryItem category={item}/>
-)
 
-const CategoriesScreen = () => {
+const CategoriesScreen = ({onSelectedCategoryEvent}) => {
+    
+    const renderCategoryItem = ({ item }) => (
+        <CategoryItem category={item} onSelectedCategoryEvent={onSelectedCategoryEvent}/>
+    )
+
     return (
         <>
             <Header title="CATEGORIAS" />
