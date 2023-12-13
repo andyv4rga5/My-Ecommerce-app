@@ -22,5 +22,6 @@ const styles = StyleSheet.create({
     headerTitle:{
         color: '#FFFFFF',
         fontSize:20,
+        fontFamily: 'Silkscreen-Regular'
     }
 })

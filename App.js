@@ -3,12 +3,13 @@ import { useFonts } from 'expo-font'
 
 export default function App() {
   const [fontLoaded] = useFonts({
-    'Barlow-regular': require('./assets/fonts/Barlow-Regular.ttf'),
+    'Barlow-Regular': require('./assets/fonts/Barlow-Regular.ttf'),
     'Barlow-Bold': require('./assets/fonts/Barlow-Bold.ttf'),
+    'Whisper-Regular': require('./assets/fonts/Whisper-Regular.ttf'),
+    'Silkscreen-Bold': require('./assets/fonts/Silkscreen-Bold.ttf'),
+    'Silkscreen-Regular': require('./assets/fonts/Silkscreen-Regular.ttf'),
   })
 
-  console.log(fontLoaded)
-  
   return (
     <CategoriesScreen />
   );
