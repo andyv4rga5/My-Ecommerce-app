@@ -4,10 +4,10 @@ import categories_data from '../data/categories_data.json'
 import CategoryItem from '../components/CategoryItem'
 
 
-const CategoriesScreen = ({onSelectedCategoryEvent}) => {
+const CategoriesScreen = ({onSelectCategoryEvent}) => {
     
     const renderCategoryItem = ({ item }) => (
-        <CategoryItem category={item} onSelectedCategoryEvent={onSelectedCategoryEvent}/>
+        <CategoryItem category={item} onSelectCategoryEvent={onSelectCategoryEvent}/>
     )
 
     return (
