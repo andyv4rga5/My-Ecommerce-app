@@ -1,4 +1,5 @@
 import CategoriesScreen from './src/screens/CategoriesScreen'
+import ProductsByCategoryScreen from './src/screens/ProductsByCategoryScreen'
 import { useFonts } from 'expo-font'
 
 export default function App() {
@@ -11,6 +12,6 @@ export default function App() {
   })
 
   return (
-    <CategoriesScreen />
+    <ProductsByCategoryScreen />
   );
 }
