@@ -24,6 +24,14 @@ export default function App() {
   }
 
   return (
-    <CategoriesScreen onSelectCategoryEvent={onSelectCategory} />
+    // <CategoriesScreen onSelectCategoryEvent={onSelectCategory} />
+    <>{
+      categorySelected
+        ?
+        <ProductsByCategoryScreen category={categorySelected} />
+        :
+        <CategoriesScreen onSelect Category Event={onSelectCategory} />
+    }
+    </>
   );
 }
