@@ -4,11 +4,13 @@ import { colors } from '../global/colors'
 
 const CategoryItem = ({ category, onSelectCategoryEvent }) => {
     return (
-        <TouchableOpacity onPress={()=>onSelectCategoryEvent(category)}>
-            <Card style={styles.cardContainer}>
-                <Text style={styles.text}>{category}</Text>
-            </Card>
-        </TouchableOpacity>
+        <>
+            <TouchableOpacity onPress={() => onSelectCategoryEvent(category)}>
+                <Card style={styles.cardContainer}>
+                    <Text style={styles.text}>{category}</Text>
+                </Card>
+            </TouchableOpacity>
+        </>
     )
 }
 

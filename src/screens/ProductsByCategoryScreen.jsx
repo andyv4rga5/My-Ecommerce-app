@@ -5,7 +5,7 @@ import Header from '../components/Headers'
 import { useState, useEffect } from 'react'
 import Search from '../components/Search'
 
-const ProductsByCategoryScreen = ({ category }) => {
+const ProductsByCategoryScreen = ({ category, onSelectProductIdEvent }) => {
     const [productsByCategory, setProductsByCategory] = useState([])
     const [search, setSearch] = useState('')
 
@@ -16,7 +16,7 @@ const ProductsByCategoryScreen = ({ category }) => {
     }, [category,search])
 
     const renderProductItem = ({ item }) => (
-        <ProductItem product={item} />
+        <ProductItem product={item} onSelectProductIdEvent={onSelectProductIdEvent} />
     )
 
     const onSearch = (search) => {

@@ -1,11 +1,13 @@
 import { ActivityIndicator } from 'react-native'
 import CategoriesScreen from './src/screens/CategoriesScreen'
 import ProductsByCategoryScreen from './src/screens/ProductsByCategoryScreen'
+import ProductDetailScreen from './src/screens/ProductDetailScreen'
 import { useFonts } from 'expo-font'
 import { useState } from 'react';
 
 export default function App() {
   const [categorySelected, setCategorySelected] = useState('')
+  const [productIdSelected, setProductIdSelected] = useState(null)
 
   console.log("Categoria Seleccionada:", categorySelected)
 
@@ -15,6 +17,7 @@ export default function App() {
     'Whisper-Regular': require('./assets/fonts/Whisper-Regular.ttf'),
     'Silkscreen-Bold': require('./assets/fonts/Silkscreen-Bold.ttf'),
     'Silkscreen-Regular': require('./assets/fonts/Silkscreen-Regular.ttf'),
+    'Oswald-ExtraLight': require('./assets/fonts/Oswald-ExtraLight.ttf'),
   })
 
   if (!fontLoaded) return <ActivityIndicator />
@@ -23,14 +26,23 @@ export default function App() {
     setCategorySelected(category)
   }
 
+  const onSelectProductId = (productId) => {
+    setProductIdSelected(productId)
+  }
+
   return (
-    <>{
-      categorySelected
-        ?
-        <ProductsByCategoryScreen category={categorySelected} />
-        :
-        <CategoriesScreen onSelectCategoryEvent={onSelectCategory} />
-    }
+    <>
+      {
+        productIdSelected
+          ?
+          <ProductDetailScreen productId={productIdSelected} />
+          :
+          categorySelected
+            ?
+            <ProductsByCategoryScreen category={categorySelected} onSelectProductIdEvent={onSelectProductId} />
+            :
+            <CategoriesScreen onSelectCategoryEvent={onSelectCategory} />
+      }
     </>
   );
 }
