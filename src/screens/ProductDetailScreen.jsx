@@ -1,17 +1,18 @@
 import { View, Text, StyleSheet, ActivityIndicator, Image, TouchableOpacity, useWindowDimensions, ScrollView } from 'react-native'
-import Header from '../components/Headers'
 import products_data from '../data/products_data.json'
 import { useEffect, useState } from 'react'
 import { colors } from '../global/colors'
 
 
-const ProductDetailScreen = ({ productId }) => {
+const ProductDetailScreen = ({ route }) => {
     const [productSelected, setProductSelected] = useState({})
     const [isLoading, setIsLoading] = useState(true)
 
     const [isPortrait, setIsPortrait] = useState(true)
 
     const { height, width } = useWindowDimensions()
+
+    const productId = route.params
 
     useEffect(() => {
         height < width ? setIsPortrait(false) : setIsPortrait(true)
@@ -31,7 +32,6 @@ const ProductDetailScreen = ({ productId }) => {
                     <ActivityIndicator />
                     :
                     <>
-                        <Header title="Detalle del producto" />
                         <ScrollView >
                             <View>
                                 <Image
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
     price: {
         fontFamily: 'Barlow-Bold',
         fontSize: 32,
-        color: colors.secondary
+        color: "grey"
     },
     buyButton: {
         marginTop: 10,
