@@ -18,15 +18,14 @@ const TabNavigator = () => {
                 screenOptions={{
                     headerShown: false,
                     tabBarStyle: styles.tabBar,
-                    tabBarLabel: styles.textColor,
                 }}
             >
                 <Tab.Screen
                     name="ShopStack"
                     component={ShopNavigator}
                     options={{
-                        tabBarIcon: () =>(
-                            <Fontisto name="shopping-store" size={24} color="#ffff" />
+                        tabBarIcon: ({focused}) =>(
+                            <Fontisto name="shopping-store" size={24} color={focused?"#ffff":"#ccc"} />
                         )
                     }}
                 />
@@ -34,8 +33,8 @@ const TabNavigator = () => {
                     name="CartStack"
                     component={CartNavigator}
                     options={{
-                        tabBarIcon: () => (
-                            <MaterialCommunityIcons name="cart-outline" size={24} color="#ffff" />
+                        tabBarIcon: ({focused}) => (
+                            <MaterialCommunityIcons name="cart-outline" size={24} color={focused?"#ffff":"#ccc"} />
                         )
                     }}
                 />
@@ -57,8 +56,4 @@ const styles = StyleSheet.create({
         height: 60,
         borderRadius:20,
     },
-
-    textColor:{
-        color: "#ffff"
-    }
 })
