@@ -1,7 +1,8 @@
-import {StyleSheet} from "react-native";
-import { colors } from '../global/colors'
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+
+import {StyleSheet} from "react-native";
+import { colors } from '../global/colors';
 
 import ShopNavigator from "./ShopNavigator";
 import CartNavigator from "./CartNavigator";
