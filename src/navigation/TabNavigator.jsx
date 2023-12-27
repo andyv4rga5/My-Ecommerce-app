@@ -3,13 +3,11 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import { StyleSheet } from "react-native";
 import { colors } from '../global/colors';
-import { Entypo } from '@expo/vector-icons'; 
-import StoreIcon from '@mui/icons-material/Store';
+import { Fontisto, MaterialCommunityIcons } from '@expo/vector-icons'; 
 
 import ShopNavigator from "./ShopNavigator";
 import CartNavigator from "./CartNavigator";
 
-Icon.loadFont();
 
 const Tab = createBottomTabNavigator()
 
@@ -26,12 +24,20 @@ const TabNavigator = () => {
                     name="ShopStack"
                     component={ShopNavigator}
                     options={{
-                        tabBarIcon: () =>{
-                            <StoreIcon size={24} color="#fff"/>
-                        }
+                        tabBarIcon: () =>(
+                            <Fontisto name="shopping-store" size={24} color="#ffff" />
+                        )
                     }}
                 />
-                <Tab.Screen name="CartStack" component={CartNavigator} />
+                <Tab.Screen
+                    name="CartStack"
+                    component={CartNavigator}
+                    options={{
+                        tabBarIcon: () => (
+                            <MaterialCommunityIcons name="cart-outline" size={24} color="#ffff" />
+                        )
+                    }}
+                />
             </Tab.Navigator>
         </NavigationContainer>
     )
