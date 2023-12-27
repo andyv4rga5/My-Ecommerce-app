@@ -4,6 +4,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import ShopNavigator from "./ShopNavigator";
 import CartNavigator from "./CartNavigator";
 
+
 const Tab = createBottomTabNavigator()
 
 const TabNavigator = () => {
