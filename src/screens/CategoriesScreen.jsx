@@ -1,19 +1,21 @@
 import { View, Text, StyleSheet, FlatList } from 'react-native'
-import categories_data from '../data/categories_data.json'
 import CategoryItem from '../components/CategoryItem'
+import { useSelector } from 'react-redux'
 
 
-const CategoriesScreen = ({navigation}) => {
-    
+const CategoriesScreen = ({ navigation }) => {
+
+    const categories = useSelector(state => state.shopReducer.categories)
+
     const renderCategoryItem = ({ item }) => (
-        <CategoryItem category={item} navigation={navigation}/>
+        <CategoryItem category={item} navigation={navigation} />
     )
 
     return (
         <>
-            <FlatList 
+            <FlatList
                 style={styles.categories}
-                data={categories_data}
+                data={categories}
                 renderItem={renderCategoryItem}
                 keyExtractor={item => item}
             />
@@ -24,7 +26,7 @@ const CategoriesScreen = ({navigation}) => {
 export default CategoriesScreen
 
 const styles = StyleSheet.create({
-    categories:{
-        marginBottom:90,
+    categories: {
+        marginBottom: 90,
     }
 })
