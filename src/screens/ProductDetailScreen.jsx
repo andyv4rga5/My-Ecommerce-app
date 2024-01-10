@@ -2,10 +2,11 @@ import { View, Text, StyleSheet, ActivityIndicator, Image, TouchableOpacity, use
 import products_data from '../data/products_data.json'
 import { useEffect, useState } from 'react'
 import { colors } from '../global/colors'
+import { useSelector, useDispatch} from 'react-redux'
 
 
 const ProductDetailScreen = ({ route }) => {
-    const [productSelected, setProductSelected] = useState({})
+    //const [productSelected, setProductSelected] = useState({})
     const [isLoading, setIsLoading] = useState(true)
 
     const [isPortrait, setIsPortrait] = useState(true)
@@ -14,13 +15,15 @@ const ProductDetailScreen = ({ route }) => {
 
     const productId = route.params
 
+    const productSelected = useSelector(state =>state.shopReducer.productSelected)
+
     useEffect(() => {
         height < width ? setIsPortrait(false) : setIsPortrait(true)
     }, [height])
 
     useEffect(() => {
-        const productFound = products_data.find(product => product.id === productId)
-        setProductSelected(productFound)
+        // const productFound = products_data.find(product => product.id === productId)
+        // setProductSelected(productFound)
         setIsLoading(false)
     }, [productId])
 
