@@ -2,7 +2,8 @@ import { View, Text, StyleSheet, ActivityIndicator, Image, TouchableOpacity, use
 import products_data from '../data/products_data.json'
 import { useEffect, useState } from 'react'
 import { colors } from '../global/colors'
-import { useSelector, useDispatch} from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { setProductSelected } from '../features/shopSlice'
 
 
 const ProductDetailScreen = ({ route }) => {
@@ -15,15 +16,15 @@ const ProductDetailScreen = ({ route }) => {
 
     const productId = route.params
 
-    const productSelected = useSelector(state =>state.shopReducer.productSelected)
+    const productSelected = useSelector(state => state.shopReducer.productSelected)
 
     useEffect(() => {
         height < width ? setIsPortrait(false) : setIsPortrait(true)
     }, [height])
 
     useEffect(() => {
-        // const productFound = products_data.find(product => product.id === productId)
-        // setProductSelected(productFound)
+        /* const productFound = products_data.find(product => product.id === productId)
+        setProductSelected(productFound) */
         setIsLoading(false)
     }, [productId])
 
