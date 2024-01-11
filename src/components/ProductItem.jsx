@@ -7,7 +7,7 @@ const ProductItem = ({ product, navigation }) => {
     return (
         <View>
             <TouchableOpacity onPress={() => {
-                //dispatch(setProductIdSelected(product.id))
+                dispatch(setProductIdSelected(product.id))
                 dispatch(setProductSelected(product.id))
                 navigation.navigate("Detalle", product.id)
             }
