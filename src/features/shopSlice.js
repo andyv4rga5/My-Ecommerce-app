@@ -21,7 +21,7 @@ export const shopSlice = createSlice({
             state.productIdSelected = action.payload
         },
         setProductSelected: (state, action) => {
-            state.productSelected = state.products.find(product => product.id === action.playload)
+            state.productSelected = state.products.find(product => product.id === state.productIdSelected)
         }
     }
 })
