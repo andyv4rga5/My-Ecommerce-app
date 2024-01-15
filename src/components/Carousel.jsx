@@ -4,15 +4,15 @@ import { useSelector } from 'react-redux';
 
 const { width } = Dimensions.get('window');
 
-const Carousel = () => {
+const Carousel = ({}) => {
 
-    //const images = useSelector(state=>state.shopReducer.productSelected.images)
+    const images = useSelector(state=>state.shopReducer.productSelected.images)
 
-    const images = [
-        'https://i.dummyjson.com/data/products/1/1.jpg',
-        'https://i.dummyjson.com/data/products/1/4.jpg',
-        'https://i.dummyjson.com/data/products/1/3.jpg',
-    ];
+    // const images = [
+    //     'https://i.dummyjson.com/data/products/1/1.jpg',
+    //     'https://i.dummyjson.com/data/products/1/4.jpg',
+    //     'https://i.dummyjson.com/data/products/1/3.jpg',
+    // ];
 
     return (
         <Swiper style={styles.container} showsButtons={true}>

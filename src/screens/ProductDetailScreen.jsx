@@ -45,7 +45,7 @@ const ProductDetailScreen = ({ route }) => {
                                     style={isPortrait ? styles.imageProduct : styles.imageProductLandscape}
                                 />
                             </View>*/}
-                            <Carousel/>
+                            <Carousel />
                             <View style={styles.detailContainer}>
                                 <Text style={styles.title}>{productSelected.title}</Text>
                                 <Text style={styles.description}>{productSelected.description}</Text>
