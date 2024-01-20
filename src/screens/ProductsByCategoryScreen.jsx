@@ -3,18 +3,24 @@ import ProductItem from '../components/ProductItem'
 import { useState, useEffect } from 'react'
 import Search from '../components/Search'
 import { useSelector, useDispatch } from 'react-redux'
+import { useGetProductsByCategoryQuery } from '../services/shopService'
 
 const ProductsByCategoryScreen = ({ navigation, route }) => {
     const [productsByCategory, setProductsByCategory] = useState([])
     const [search, setSearch] = useState('')
 
     const category = useSelector(state => state.shopReducer.categorySelected)
-    const productsFilteredByCategory = useSelector(state =>state.shopReducer.productsFilteredByCategory)
+    //const productsFilteredByCategory = useSelector(state =>state.shopReducer.productsFilteredByCategory)
+
+    const { data: productsFilteredByCategory, isLoading, error } = useGetProductsByCategoryQuery(category)
 
     useEffect(() => {
-        const productsFiltered = productsFilteredByCategory.filter(product => product.title.toLowerCase().includes(search.toLowerCase()))
-        setProductsByCategory(productsFiltered)
-    }, [category,search])
+        if (!isLoading) {
+            const productsValues = Object.values(productsFilteredByCategory)
+            const productsFiltered = productsValues.filter(product => product.title.toLowerCase().includes(search.toLowerCase()))
+            setProductsByCategory(productsFiltered)
+        }
+    }, [category, search])
 
     const renderProductItem = ({ item }) => (
         <ProductItem product={item} navigation={navigation} />
@@ -26,7 +32,7 @@ const ProductsByCategoryScreen = ({ navigation, route }) => {
 
     return (
         <>
-            <Search onSearchHandlerEvent = {onSearch}/>
+            <Search onSearchHandlerEvent={onSearch} />
             <FlatList
                 data={productsByCategory}
                 renderItem={renderProductItem}

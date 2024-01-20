@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 
 const { width } = Dimensions.get('window');
 
-const Carousel = ({}) => {
+const Carousel = () => {
 
     const images = useSelector(state=>state.shopReducer.productSelected.images)
 
