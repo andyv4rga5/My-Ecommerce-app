@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, FlatList } from 'react-native'
+import { View, Text, StyleSheet, FlatList, ActivityIndicator } from 'react-native'
 import ProductItem from '../components/ProductItem'
 import { useState, useEffect } from 'react'
 import Search from '../components/Search'
@@ -20,7 +20,7 @@ const ProductsByCategoryScreen = ({ navigation, route }) => {
             const productsFiltered = productsValues.filter(product => product.title.toLowerCase().includes(search.toLowerCase()))
             setProductsByCategory(productsFiltered)
         }
-    }, [category, search])
+    }, [isLoading, category, search])
 
     const renderProductItem = ({ item }) => (
         <ProductItem product={item} navigation={navigation} />
@@ -32,12 +32,19 @@ const ProductsByCategoryScreen = ({ navigation, route }) => {
 
     return (
         <>
-            <Search onSearchHandlerEvent={onSearch} />
-            <FlatList
-                data={productsByCategory}
-                renderItem={renderProductItem}
-                keyExtractor={item => item.id}
-            />
+            {
+                isLoading ?
+                    <ActivityIndicator />
+                    :
+                    <>
+                        <Search onSearchHandlerEvent={onSearch} />
+                        <FlatList
+                            data={productsByCategory}
+                            renderItem={renderProductItem}
+                            keyExtractor={item => item.id}
+                        />
+                    </>
+            }
         </>
     )
 }
