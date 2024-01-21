@@ -1,8 +1,10 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import Input from '../components/Input'
 import { colors } from '../global/colors'
-import { useState } from 'react'
 import { useLogInMutation } from '../services/authService'
+import { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { setUser } from '../features/authSlice'
 
 const LoginScreen = ({ navigation }) => {
     const [email, setEmail] = useState("")
@@ -12,7 +14,16 @@ const LoginScreen = ({ navigation }) => {
 
     const onSubmit = () => {
         triggerLogIn({email, password})
+        console.log(result)
     }
+
+    const dispatch = useDispatch()
+
+    useEffect(()=>{
+        if(result.data){
+            dispatch(setUser(result.data))
+        }
+    },[result])
 
     return (
         <View style={styles.container}>
