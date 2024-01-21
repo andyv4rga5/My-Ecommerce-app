@@ -1,1 +1,0 @@
-export const base_url = 'https://ecommercer-app-default-rtdb.firebaseio.com/'
