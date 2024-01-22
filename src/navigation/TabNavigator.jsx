@@ -7,6 +7,7 @@ import { Fontisto, MaterialCommunityIcons, FontAwesome } from '@expo/vector-icon
 import ShopNavigator from "./ShopNavigator";
 import CartNavigator from "./CartNavigator";
 import OrdersNavigator from "./OrdersNavigator";
+import ProfileNavigator from "./ProfileNavigator";
 
 const Tab = createBottomTabNavigator()
 
@@ -20,7 +21,7 @@ const TabNavigator = () => {
             }}
         >
             <Tab.Screen
-                name="Shop Stack"
+                name="Shop"
                 component={ShopNavigator}
                 options={{
                     tabBarIcon: ({ focused }) => (
@@ -29,7 +30,7 @@ const TabNavigator = () => {
                 }}
             />
             <Tab.Screen
-                name="Cart Stack"
+                name="Cart"
                 component={CartNavigator}
                 options={{
                     tabBarIcon: ({ focused }) => (
@@ -38,7 +39,7 @@ const TabNavigator = () => {
                 }}
             />
             <Tab.Screen
-                name="Order Stack"
+                name="Order"
                 component={OrdersNavigator}
                 options={{
                     tabBarIcon: ({ focused }) => (
@@ -46,6 +47,15 @@ const TabNavigator = () => {
                     )
                 }}
             />
+            <Tab.Screen
+                name="Profile"
+                component={ProfileNavigator}
+                options={{
+                    tabBarIcon: ({ focused }) => (
+                        <FontAwesome name="user-circle-o" size={24} color={focused ? "#ffff" : "grey"} />
+                    )
+                }}
+            />            
         </Tab.Navigator>
     )
 }

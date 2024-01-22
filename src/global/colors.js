@@ -4,7 +4,7 @@ export const colors = {
     primaryBack: "#89C2B5",
     secondary: "#EBEBEB",
     shadows: "#252422",
-    btnCompras: '#2A2D43',
     confirmText: "#fff",
     btnCompras: "#233329",
+    success: '#32C168',
 }
