@@ -12,10 +12,10 @@ const SignupScreen = ({ navigation }) => {
     const [password, setPassword] = useState("")
     const [confirmPassword, setConfirmPassword] = useState("")
 
-    const [triggerSignup, result] = useSignUpMutation()
+    const [triggerSignUp, result] = useSignUpMutation()
 
     const onSubmit = () => {
-        triggerSignup({email, password})
+        triggerSignUp({email, password})
         console.log(result)
     }
 

@@ -23,7 +23,7 @@ const LoginScreen = ({ navigation }) => {
         if(result.data){
             dispatch(setUser(result.data))
         }
-    },[result])
+    }, [result])
 
     return (
         <View style={styles.container}>

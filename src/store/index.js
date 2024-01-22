@@ -13,7 +13,7 @@ const store = configureStore({
         cartReducer,
         authReducer,
         [shopApi.reducerPath]: shopApi.reducer,
-        [authApi.reducerPath]: shopApi.reducer,
+        [authApi.reducerPath]: authApi.reducer,
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware().concat(shopApi.middleware).concat(authApi.middleware)

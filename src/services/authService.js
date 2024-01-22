@@ -1,12 +1,12 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"
-import { base_auth_url, api_key } from "../firebase/database"
+import { api_key, base_auth_url } from "../firebase/database"
 
 export const authApi = createApi({
     reducerPath: "authApi",
-    baseQuery: fetchBaseQuery({baseUrl:base_auth_url}),
+    baseQuery: fetchBaseQuery({ baseUrl: base_auth_url }),
     endpoints: (builder) => ({
         signUp: builder.mutation({
-            query: ({...userData}) => ({
+            query: ({ ...userData }) => ({
                 url: `accounts:signUp?key=${api_key}`,
                 method: 'POST',
                 body: userData
@@ -22,4 +22,4 @@ export const authApi = createApi({
     })
 })
 
-export const {useSignUpMutation, useLogInMutation} = authApi;
+export const { useSignUpMutation, useLogInMutation } = authApi;
