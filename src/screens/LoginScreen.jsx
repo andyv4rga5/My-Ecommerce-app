@@ -5,6 +5,7 @@ import { useLogInMutation } from '../services/authService'
 import { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { setUser } from '../features/authSlice'
+import { LinearGradient } from 'expo-linear-gradient';
 
 const LoginScreen = ({ navigation }) => {
     const [email, setEmail] = useState("")
@@ -13,20 +14,25 @@ const LoginScreen = ({ navigation }) => {
     const [triggerLogIn, result] = useLogInMutation()
 
     const onSubmit = () => {
-        triggerLogIn({email, password})
+        triggerLogIn({ email, password })
         console.log(result)
     }
 
     const dispatch = useDispatch()
 
-    useEffect(()=>{
-        if(result.data){
+    useEffect(() => {
+        if (result.data) {
             dispatch(setUser(result.data))
         }
     }, [result])
 
     return (
         <View style={styles.container}>
+            <LinearGradient
+                // Background Linear Gradient
+                colors={[colors.primary, colors.primarySecond]}
+                style={styles.background}
+            />
             <Input
                 label="Email:"
                 onChange={setEmail}
@@ -53,22 +59,29 @@ export default LoginScreen
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: colors.primary,
+        // backgroundColor: colors.primary,
         justifyContent: 'center',
         alignItems: 'center',
         flex: 1,
         gap: 10,
     },
+    background: {
+        position: 'absolute',
+        left: 0,
+        right: 0,
+        top: 0,
+        height: 700,
+    },
     btn: {
-        padding: 10,
+        padding: 12,
         backgroundColor: colors.primaryBack,
         borderRadius: 8,
         margin: 5,
-
     },
     btnText: {
         color: "#fff",
-        fontFamily: "Barlow-Bold"
+        fontFamily: "Barlow-Bold",
+        fontSize: 16,
     },
     altContainer: {
         flexDirection: 'row',
@@ -80,12 +93,12 @@ const styles = StyleSheet.create({
     subtitle: {
         color: "#fff",
         fontFamily: "Barlow-Bold",
-        fontSize: 12,
+        fontSize: 14,
     },
     subtitleLink: {
         fontFamily: "Barlow-Light",
         color: "#fff",
-        fontSize: 11,
+        fontSize: 14,
         textDecorationLine: 'underline'
     }
 })

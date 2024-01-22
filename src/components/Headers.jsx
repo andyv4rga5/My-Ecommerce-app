@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
 
     headerTitle: {
         color: '#FFFFFF',
-        fontSize: 22,
+        fontSize: 26,
         fontFamily: 'Silkscreen-Regular',
     }
 })

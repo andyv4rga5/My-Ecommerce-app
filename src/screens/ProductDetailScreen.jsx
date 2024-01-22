@@ -44,13 +44,13 @@ const ProductDetailScreen = ({ route }) => {
                     :
                     <>
                         <ScrollView >
-                            {/*<View>
+                            {/* <View>
                                 <Image
                                     source={{ uri: productSelected.images[0] }}
                                     resizeMode='cover'
                                     style={isPortrait ? styles.imageProduct : styles.imageProductLandscape}
                                 />
-                            </View>*/}
+                            </View> */}
                             <Carousel />
                             <View style={styles.detailContainer}>
                                 <Text style={styles.title}>{productSelected.title}</Text>
