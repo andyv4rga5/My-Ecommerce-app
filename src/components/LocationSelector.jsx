@@ -111,17 +111,17 @@ const styles = StyleSheet.create({
         marginVertical: 15,
     },
     textBtn: {
-        fontFamily: 'Karla-regular',
+        fontFamily: 'Barlow-regular',
         color: "#fff"
     }, textTitle: {
-        fontFamily: "Karla-Bold",
+        fontFamily: "Barlow-Bold",
         fontSize: 16,
     },
     textAddress: {
-        fontFamily: 'Karla-regular'
+        fontFamily: 'Barlow-regular'
     },
     textLocation: {
-        fontFamily: 'Karla-Light',
+        fontFamily: 'Barlow-Light',
         fontSize: 12
     }
 })
