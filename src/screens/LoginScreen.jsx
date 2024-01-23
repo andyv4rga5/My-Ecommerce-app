@@ -15,8 +15,8 @@ const LoginScreen = ({ navigation }) => {
     const [triggerLogIn, result] = useLogInMutation()
 
     const onSubmit = () => {
-        triggerLogIn({ email, password })
-        //triggerLogIn({ email: "camilo@coder.com", password: "123456" })
+        //triggerLogIn({ email, password })
+        triggerLogIn({ email: "camilo@coder.com", password: "123456" })
         console.log(result)
     }
 
@@ -30,7 +30,7 @@ const LoginScreen = ({ navigation }) => {
                 email: result.data.email,
                 token: result.data.idToken
             })
-                .then(result => console.log("Usuarin registrado exitosamente: ", result))
+                .then(result => console.log("Usuario registrado exitosamente: ", result))
                 .catch(error => console.log("Error al registrar sesion sesión: ", error.message))
         }
     }, [result])
