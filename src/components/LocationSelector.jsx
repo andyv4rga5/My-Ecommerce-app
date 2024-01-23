@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
     },
     textAddress: {
-        fontFamily: 'Barlow-regular'
+        fontFamily: 'Barlow-Light'
     },
     textLocation: {
         fontFamily: 'Barlow-Light',
