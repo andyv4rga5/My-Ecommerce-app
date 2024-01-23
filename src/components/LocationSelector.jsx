@@ -57,7 +57,6 @@ const LocationSelector = () => {
             longitude: location.longitude,
             address: address
         }
-        console.log(localId)
         dispatch(setUserLocation(locationFormatted))
         triggerPutUserLocation({ location: locationFormatted, localId })
     }
