@@ -24,7 +24,7 @@ const MainNavigator = () => {
         if(locationData){
             dispatch(setUserLocation(locationData))
         }
-    },[data, locationData])
+    },[data, locationData, isLoading, isLocationLoading])
 
     return (
         <NavigationContainer>
