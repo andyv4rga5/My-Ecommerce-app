@@ -1,6 +1,6 @@
 import * as SQLite from 'expo-sqlite';
 
-const db = SQLite.openDatabase('ecommerceSessions.db')
+const db = SQLite.openDatabase('ecommerceApp.db')
 
 export const init = () => {
     const promise = new Promise((resolve, reject) => {
@@ -33,7 +33,7 @@ export const fetchSessions = () => {
     const promise = new Promise((resolve, reject) => {
         db.transaction(tx => {
             tx.executeSql(
-                'SELECT * FROM sessions WHERE localId = ?',
+                'SELECT * FROM sessions',
                 [],
                 (_, result) => resolve(result),
                 (_, error) => reject(error)

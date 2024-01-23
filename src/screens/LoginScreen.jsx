@@ -31,7 +31,7 @@ const LoginScreen = ({ navigation }) => {
                 token: result.data.idToken
             })
                 .then(result => console.log("Usuarin registrado exitosamente: ", result))
-                .catch(error => console.log("Error al registrar sesion sesión: ", error))
+                .catch(error => console.log("Error al registrar sesion sesión: ", error.message))
         }
     }, [result])
 
