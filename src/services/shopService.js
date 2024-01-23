@@ -38,8 +38,8 @@ export const shopApi = createApi({
             query: (localId) => `locations/${localId}.json`
         }),
         putUserLocation: builder.mutation({
-            query: ({ location, localId }) => ({
-                url: `locations/${localId}.json`,
+            query: ({location, localId})=>({
+                url:  `locations/${localId}.json`,
                 method: 'PUT',
                 body: {
                     latitude: location.latitude,
