@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { setUser } from '../features/authSlice'
 import { LinearGradient } from 'expo-linear-gradient';
+import { insertSession } from '../db'
 
 const LoginScreen = ({ navigation }) => {
     const [email, setEmail] = useState("")
@@ -24,6 +25,13 @@ const LoginScreen = ({ navigation }) => {
     useEffect(() => {
         if (result.data) {
             dispatch(setUser(result.data))
+            insertSession({
+                localId: result.data.localId,
+                email: result.data.email,
+                token: result.data.idToken
+            })
+                .then(result => console.log("Usuarin registrado exitosamente: ", result))
+                .catch(error => console.log("Error al registrar sesion sesión: ", error))
         }
     }, [result])
 

@@ -9,7 +9,7 @@ export default function App() {
 
   init()
     .then(() => console.log("Database initializated"))
-    .catch((tx, error) => console.log(error.message))
+    .catch((error) => console.log("Initialize db failed: ", error))
 
   const [fontLoaded] = useFonts({
     'Barlow-Regular': require('./assets/fonts/Barlow-Regular.ttf'),
