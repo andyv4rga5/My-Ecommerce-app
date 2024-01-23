@@ -5,6 +5,7 @@ import MapPreview from './MapPreview.jsx'
 import { setUserLocation } from '../features/authSlice.js'
 import { useDispatch, useSelector } from 'react-redux'
 import { usePutUserLocationMutation } from '../services/shopService'
+import { colors } from '../global/colors.js'
 
 const maps_api_key = process.env.EXPO_MAPS_API_KEY
 
