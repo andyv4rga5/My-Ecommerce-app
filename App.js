@@ -3,9 +3,13 @@ import { useFonts } from 'expo-font';
 import MainNavigator from './src/navigation/MainNavigator';
 import { Provider } from 'react-redux';
 import store from './src/store';
-
+import { init } from './src/db';
 
 export default function App() {
+
+  init()
+    .then(() => console.log("Database initializated"))
+    .catch((tx, error) => console.log(error.message))
 
   const [fontLoaded] = useFonts({
     'Barlow-Regular': require('./assets/fonts/Barlow-Regular.ttf'),
