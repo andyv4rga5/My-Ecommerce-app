@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
         marginVertical: 15,
     },
     textBtn: {
-        fontFamily: 'Barlow-regular',
+        fontFamily: 'Barlow-Light',
         color: "#fff"
     }, textTitle: {
         fontFamily: "Barlow-Bold",
