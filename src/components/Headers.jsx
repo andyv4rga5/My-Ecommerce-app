@@ -1,10 +1,21 @@
 import { View, Text, StyleSheet, FlatList, TouchableOpacity } from 'react-native'
 import { colors } from '../global/colors'
 import { AntDesign } from '@expo/vector-icons';
+import { useDispatch, useSelector } from 'react-redux';
+import { logout } from '../features/authSlice';
+import { deleteSession } from '../db';
 
 const Header = ({ title, navigation }) => {
 
-    
+    const email = useSelector(state=>state.authReducer.user)
+    const localId = useSelector(state=>state.authReducer.localId)
+    const dispatch = useDispatch()
+
+    const onLogout = () => {
+        dispatch(logout())
+        const deletedSession = deleteSession(localId)
+        console.log("Secion cerrada: ", deletedSession)
+    }
 
     return (
         <View style={styles.headerContainer}>
@@ -21,7 +32,7 @@ const Header = ({ title, navigation }) => {
             {
                 email
                 &&
-                <TouchableOpacity onPress={logout}>
+                <TouchableOpacity onPress={onLogout}>
                     <AntDesign name="logout" size={24} color="white" />
                 </TouchableOpacity>
             }
