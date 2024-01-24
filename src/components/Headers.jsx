@@ -7,8 +7,8 @@ import { deleteSession } from '../db';
 
 const Header = ({ title, navigation }) => {
 
-    const email = useSelector(state=>state.authReducer.user)
-    const localId = useSelector(state=>state.authReducer.localId)
+    const email = useSelector(state => state.authReducer.user)
+    const localId = useSelector(state => state.authReducer.localId)
     const dispatch = useDispatch()
 
     const onLogout = () => {
@@ -19,6 +19,13 @@ const Header = ({ title, navigation }) => {
 
     return (
         <View style={styles.headerContainer}>
+            {
+                email
+                &&
+                <TouchableOpacity onPress={onLogout}>
+                    <AntDesign name="logout" size={24} color="white" />
+                </TouchableOpacity>
+            }
             <Text style={styles.headerTitle}>{title}</Text>
             {
                 navigation.canGoBack()
@@ -28,13 +35,6 @@ const Header = ({ title, navigation }) => {
                     </TouchableOpacity>
                     :
                     <View></View>
-            }
-            {
-                email
-                &&
-                <TouchableOpacity onPress={onLogout}>
-                    <AntDesign name="logout" size={24} color="white" />
-                </TouchableOpacity>
             }
         </View>
     )
