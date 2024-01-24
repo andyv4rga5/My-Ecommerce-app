@@ -1,9 +1,7 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-
 import { StyleSheet } from "react-native";
 import { colors } from '../global/colors';
 import { Fontisto, MaterialCommunityIcons, FontAwesome } from '@expo/vector-icons';
-
 import ShopNavigator from "./ShopNavigator";
 import CartNavigator from "./CartNavigator";
 import OrdersNavigator from "./OrdersNavigator";

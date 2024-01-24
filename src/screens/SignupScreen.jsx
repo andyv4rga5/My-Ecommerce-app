@@ -61,7 +61,6 @@ const SignupScreen = ({ navigation }) => {
     return (
         <KeyboardAvoidingView style={styles.container} behavior='height'>
             <LinearGradient
-                // Background Linear Gradient
                 colors={[colors.primary, colors.primarySecond]}
                 style={styles.background}
             />
@@ -99,7 +98,6 @@ export default SignupScreen
 
 const styles = StyleSheet.create({
     container: {
-        // backgroundColor: colors.primary,
         justifyContent: 'center',
         alignItems: 'center',
         flex: 1,

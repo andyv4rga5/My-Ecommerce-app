@@ -1,9 +1,8 @@
-import { View, Text, StyleSheet, FlatList, TouchableOpacity } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 import { colors } from '../global/colors'
 import { AntDesign } from '@expo/vector-icons';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../features/authSlice';
-import { deleteSession } from '../db';
 
 const Header = ({ title, navigation }) => {
 
@@ -13,8 +12,6 @@ const Header = ({ title, navigation }) => {
 
     const onLogout = () => {
         dispatch(logout())
-        const deletedSession = deleteSession(localId)
-        console.log("Secion cerrada: ", deletedSession)
     }
 
     return (

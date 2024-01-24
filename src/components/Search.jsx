@@ -17,11 +17,6 @@ const Search = ({ onSearchHandlerEvent }) => {
         }
     }
 
-    const onResetSearchHandler = () => {
-        setSearchInput("")
-        onSearchHandlerEvent(searchInput)
-    }
-
     return (
         <>
             <View style={styles.searchContainer}>

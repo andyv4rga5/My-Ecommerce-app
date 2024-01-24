@@ -1,8 +1,8 @@
-import { View, Text, StyleSheet, FlatList, ActivityIndicator } from 'react-native'
+import { StyleSheet, FlatList, ActivityIndicator } from 'react-native'
 import ProductItem from '../components/ProductItem'
 import { useState, useEffect } from 'react'
 import Search from '../components/Search'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { useGetProductsByCategoryQuery } from '../services/shopService'
 
 const ProductsByCategoryScreen = ({ navigation, route }) => {
@@ -10,7 +10,6 @@ const ProductsByCategoryScreen = ({ navigation, route }) => {
     const [search, setSearch] = useState('')
 
     const category = useSelector(state => state.shopReducer.categorySelected)
-    //const productsFilteredByCategory = useSelector(state =>state.shopReducer.productsFilteredByCategory)
 
     const { data: productsFilteredByCategory, isLoading, error } = useGetProductsByCategoryQuery(category)
 
@@ -50,6 +49,3 @@ const ProductsByCategoryScreen = ({ navigation, route }) => {
 }
 
 export default ProductsByCategoryScreen
-
-const styles = StyleSheet.create({
-})

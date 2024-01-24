@@ -16,8 +16,6 @@ const LoginScreen = ({ navigation }) => {
 
     const onSubmit = () => {
         triggerLogIn({ email, password })
-        //triggerLogIn({ email: "camilo@coder.com", password: "123456" })
-        console.log(result)
     }
 
     const dispatch = useDispatch()
@@ -68,7 +66,6 @@ export default LoginScreen
 
 const styles = StyleSheet.create({
     container: {
-        // backgroundColor: colors.primary,
         justifyContent: 'center',
         alignItems: 'center',
         flex: 1,

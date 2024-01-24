@@ -1,14 +1,11 @@
 import { View, Text, StyleSheet, ActivityIndicator, Image, TouchableOpacity, useWindowDimensions, ScrollView } from 'react-native'
-import products_data from '../data/products_data.json'
 import { useEffect, useState } from 'react'
 import { colors } from '../global/colors'
 import { useSelector, useDispatch } from 'react-redux'
-import { setProductSelected } from '../features/shopSlice'
 import Carousel from '../components/Carousel'
 import { addItem } from '../features/cartSlice'
 
 const ProductDetailScreen = ({ route }) => {
-    //const [productSelected, setProductSelected] = useState({})
     const [isLoading, setIsLoading] = useState(true)
 
     const [isPortrait, setIsPortrait] = useState(true)
@@ -24,8 +21,6 @@ const ProductDetailScreen = ({ route }) => {
     }, [height])
 
     useEffect(() => {
-        /* const productFound = products_data.find(product => product.id === productId)
-        setProductSelected(productFound) */
         setIsLoading(false)
     }, [productId])
 
@@ -44,13 +39,6 @@ const ProductDetailScreen = ({ route }) => {
                     :
                     <>
                         <ScrollView >
-                            {/* <View>
-                                <Image
-                                    source={{ uri: productSelected.images[0] }}
-                                    resizeMode='cover'
-                                    style={isPortrait ? styles.imageProduct : styles.imageProductLandscape}
-                                />
-                            </View> */}
                             <Carousel />
                             <View style={styles.detailContainer}>
                                 <Text style={styles.title}>{productSelected.title}</Text>
