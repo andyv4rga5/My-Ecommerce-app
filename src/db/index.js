@@ -29,7 +29,7 @@ export const insertSession = ({ localId, email, token }) => {
     return promise
 }
 
-export const fetchSessions = () => {
+export const fetchSession = () => {
     const promise = new Promise((resolve, reject) => {
         db.transaction(tx => {
             tx.executeSql(
