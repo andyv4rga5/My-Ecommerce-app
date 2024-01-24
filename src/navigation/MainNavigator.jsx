@@ -12,7 +12,7 @@ const MainNavigator = () => {
     const user = useSelector(state => state.authReducer.user)
     const localId = useSelector(state => state.authReducer.localId)
 
-    const { data, error, isLoading } = useGetProfilePictureQuery(localId)
+    const { data, isLoading } = useGetProfilePictureQuery(localId)
 
     const { data: locationData, error: locationError, isLoading: isLocationLoading } = useGetUserLocationQuery(localId)
 

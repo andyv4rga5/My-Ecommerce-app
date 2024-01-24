@@ -7,10 +7,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setProfilePicture } from '../features/authSlice';
 import { usePutProfilePictureMutation } from '../services/shopService';
 
-const ImageSelectorScreen = ({navigation}) => {
+const ImageSelectorScreen = ({ navigation }) => {
     const [image, setImage] = useState('')
 
-    const localId = useSelector(state=>state.authReducer.localId)
+    const localId = useSelector(state => state.authReducer.localId)
 
     const verifyCameraPermissions = async () => {
         const { granted } = await ImagePicker.requestCameraPermissionsAsync()

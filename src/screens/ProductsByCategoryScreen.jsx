@@ -5,13 +5,13 @@ import Search from '../components/Search'
 import { useSelector } from 'react-redux'
 import { useGetProductsByCategoryQuery } from '../services/shopService'
 
-const ProductsByCategoryScreen = ({ navigation, route }) => {
+const ProductsByCategoryScreen = ({ navigation }) => {
     const [productsByCategory, setProductsByCategory] = useState([])
     const [search, setSearch] = useState('')
 
     const category = useSelector(state => state.shopReducer.categorySelected)
 
-    const { data: productsFilteredByCategory, isLoading, error } = useGetProductsByCategoryQuery(category)
+    const { data: productsFilteredByCategory, isLoading } = useGetProductsByCategoryQuery(category)
 
     useEffect(() => {
         if (!isLoading) {

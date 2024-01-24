@@ -1,4 +1,4 @@
-import { StyleSheet, Image, View, Dimensions } from 'react-native'
+import { StyleSheet, Image, View } from 'react-native'
 import React from 'react'
 
 const maps_api_key = process.env.EXPO_MAPS_API_KEY
