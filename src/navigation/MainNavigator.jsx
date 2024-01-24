@@ -4,7 +4,7 @@ import AuthNavigator from "./AuthNavigator";
 import { useSelector, useDispatch } from "react-redux";
 import { useGetProfilePictureQuery } from "../services/shopService";
 import { useEffect } from "react";
-import { setProfilePicture } from "../features/authSlice";
+import { setProfilePicture, setUserLocation, setUser } from "../features/authSlice";
 import { useGetUserLocationQuery } from "../services/shopService";
 import { fetchSession } from "../db";
 

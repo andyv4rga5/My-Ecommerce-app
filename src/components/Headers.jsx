@@ -3,6 +3,9 @@ import { colors } from '../global/colors'
 import { AntDesign } from '@expo/vector-icons';
 
 const Header = ({ title, navigation }) => {
+
+    
+
     return (
         <View style={styles.headerContainer}>
             <Text style={styles.headerTitle}>{title}</Text>
@@ -14,6 +17,13 @@ const Header = ({ title, navigation }) => {
                     </TouchableOpacity>
                     :
                     <View></View>
+            }
+            {
+                email
+                &&
+                <TouchableOpacity onPress={logout}>
+                    <AntDesign name="logout" size={24} color="white" />
+                </TouchableOpacity>
             }
         </View>
     )
