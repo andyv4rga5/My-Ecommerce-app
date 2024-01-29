@@ -3,14 +3,18 @@ import React from 'react'
 import Card from './Card'
 import { Feather } from '@expo/vector-icons';
 
-const OrderItem = ({ order, total }) => {
+const OrderItem = ({ order }) => {
+
+    let date = new Date(order.createAt)
+    date = date.toLocaleString()
+
     return (
         <Card style={styles.cartItemContainer}>
             <View >
                 <Text style={styles.createdAt}>
-                    Creada el {new Date(order.createdAt).toLocaleString()}
+                    Creada el {date}
                 </Text>
-                <Text style={styles.total}>Total: ${total}</Text>
+                <Text style={styles.total}>Total: ${order.total}</Text>
             </View>
             <TouchableOpacity style={styles.searchIcon} onPress={null}>
                 <Feather name="search" size={24} color="black" />
@@ -30,12 +34,12 @@ const styles = StyleSheet.create({
     searchIcon: {
         marginLeft: 'auto',
     },
-    createdAt:{
+    createdAt: {
         fontFamily: 'Barlow-Regular',
-        marginBottom:5,
+        marginBottom: 5,
     },
-    total:{
+    total: {
         fontFamily: 'Barlow-Bold',
-        fontSize:14,
+        fontSize: 14,
     }
 })

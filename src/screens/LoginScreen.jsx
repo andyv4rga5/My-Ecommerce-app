@@ -28,15 +28,12 @@ const LoginScreen = ({ navigation }) => {
                 email: result.data.email,
                 token: result.data.idToken
             })
-                .then(result => console.log("Usuario registrado exitosamente: ", result))
-                .catch(error => console.log("Error al registrar sesion sesión: ", error.message))
         }
     }, [result])
 
     return (
         <View style={styles.container}>
             <LinearGradient
-                // Background Linear Gradient
                 colors={[colors.primary, colors.primarySecond]}
                 style={styles.background}
             />

@@ -1,22 +1,33 @@
 import { FlatList } from 'react-native'
 import OrderItem from '../components/OrderItem'
-import orders_data from '../data/orders_data.json'
+import { useGetOrdersQuery } from '../services/shopService'
+import { useState, useEffect } from 'react'
+import { useSelector } from 'react-redux'
+import { isLoading } from 'expo-font'
 
 const OrdersScreen = () => {
+
+  const localId = useSelector(state => state.authReducer.localId)
+  const { data, isLoading } = useGetOrdersQuery(localId)
+  const [orderData, setOrderData] = useState([])
+
+  useEffect(() => {
+    if (data) {
+      const orderData = Object.values(data)
+      setOrderData(orderData)
+    }
+  }, [data, isLoading])
+
   const renderOrderItem = ({ item }) => {
-    const total = item.items.reduce((accumulator, currentItem) => (
-      accumulator += currentItem.price * currentItem.quantity
-    ), 0)
     return (
-      <OrderItem order={item} total={total} />
+      <OrderItem order={item} />
     )
   }
 
   return (
     <FlatList
-      data={orders_data}
+      data={orderData}
       renderItem={renderOrderItem}
-      keyExtractor={item => item.id}
     />
   )
 }

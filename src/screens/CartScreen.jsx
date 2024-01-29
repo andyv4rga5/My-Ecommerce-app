@@ -8,10 +8,12 @@ const CartScreen = () => {
 
   const cartItems = useSelector(state => state.cartReducer.items)
   const total = useSelector(state => state.cartReducer.total)
+  const localId = useSelector(state=>state.authReducer.localId)
   const [triggerPost, result] = usePostOrderMutation()
 
   const confirmCart = () => {
-    triggerPost({ total, cartItems, user: "LoggedUser" })
+    const createAt = new Date()
+    triggerPost({ total, cartItems, localId: localId, createAt: createAt })
   }
 
   const renderCartItem = ({ item }) => (
