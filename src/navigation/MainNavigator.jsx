@@ -6,7 +6,6 @@ import { useGetProfilePictureQuery } from "../services/shopService";
 import { useEffect } from "react";
 import { setProfilePicture, setUserLocation, setUser } from "../features/authSlice";
 import { useGetUserLocationQuery } from "../services/shopService";
-import { fetchSession } from "../db";
 
 const MainNavigator = () => {
     const user = useSelector(state => state.authReducer.user)

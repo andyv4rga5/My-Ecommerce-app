@@ -8,12 +8,12 @@ const CartScreen = () => {
 
   const cartItems = useSelector(state => state.cartReducer.items)
   const total = useSelector(state => state.cartReducer.total)
-  const localId = useSelector(state=>state.authReducer.localId)
+  const localId = useSelector(state => state.authReducer.localId)
   const [triggerPost, result] = usePostOrderMutation()
 
   const confirmCart = () => {
     const createAt = new Date()
-    triggerPost({ total, cartItems, localId: localId, createAt: createAt })
+    triggerPost({ total, cartItems, localId: localId, createAt: createAt, orderId: Math.ceil(Math.random(1, 10) * 1000) })
   }
 
   const renderCartItem = ({ item }) => (

@@ -17,13 +17,16 @@
       "supportsTablet": true
     },
     "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      }
+      "icon": "./assets/icon.png",
+      "package": "com.andyvargas.myecommerceapp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "0ef59f2b-fb12-4829-9828-e06225b9be96"
+      }
     }
   }
 }
