@@ -1,5 +1,5 @@
 # Ecommerce de Tienda Virtual 
-[Icono App](https://drive.google.com/file/d/1cvFMoK8g23ijDa6tNoKy_ojHnYMIS4ts/view?usp=sharing)
+[Imagen del icono de la App](https://drive.google.com/file/d/1cvFMoK8g23ijDa6tNoKy_ojHnYMIS4ts/view?usp=sharing)
 
 ## Descripción del Proyecto
 
@@ -65,7 +65,7 @@ Asegúrate de tener instalados los siguientes componentes antes de comenzar:
 
 4. **Emulador :**
 
-    [Android Studio](https://drive.google.com/file/d/1yd98khrOZVJRVg-rZPktf8rEtSxxbyFb/view?usp=sharing)
+    [Imagen de referecia Android Studio](https://drive.google.com/file/d/1yd98khrOZVJRVg-rZPktf8rEtSxxbyFb/view?usp=sharing)
    - Configura un emulador de Android o iOS si planeas probar la aplicación en un entorno emulado.
 
    - La instalación de Android Studio puede ser extensa, y para facilitar este proceso, se proporciona un material de apoyo. A continuación, se presenta una breve descripción, y puedes consultar la presentación completa en [Google Presentación](https://docs.google.com/presentation/d/1r9nS4tTdvPJyxgnNedTCrGHLT1zp7pEhlyICESBE8jc/edit?usp=sharing).
@@ -202,4 +202,4 @@ Todas las contribuciones son bienvenidas. Abre un problema para discutir cambios
 
 ## Estructura de Carpetas
 A continuación se presenta la estructura de carpetas del proyecto para una posible orientación para futuros colaboradoes del proyecto:
-[Imagen de la estructura de carpetas](https://drive.google.com/file/d/1S_FL1oMu2PC-MWkGJNHpiCWrZ4WR08Vz/view?usp=sharing)
+[Imagen de referencia de la estructura de carpetas](https://drive.google.com/file/d/1S_FL1oMu2PC-MWkGJNHpiCWrZ4WR08Vz/view?usp=sharing)
