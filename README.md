@@ -1,9 +1,9 @@
-# Tienda Virtual
+# Ecommerce de Tienda Virtual 
+![Icono](../My-Ecommerce-app/assets/icon.png){width=100px}
 
 ## Descripción del Proyecto
 
-Tienda Virtual es una aplicación móvil desarrollada con React Native y Expo que ofrece una experiencia de compra en línea. La aplicación proporciona funciones de registro de usuario, inicio de sesión, navegación por categorías de productos, visualización de detalles de productos, carrito de compras y realización de pedidos.
-
+Esta aplicación móvil, desarrollada con React Native y Expo, ofrece una completa experiencia de compra en línea. Diseñada para facilitar a los usuarios la exploración y adquisición de productos de manera intuitiva, la aplicación cuenta con funciones avanzadas que mejoran la interacción y satisfacción del usuario.
 
 ## Tabla de Contenidos
 - [Características](#características)
@@ -13,9 +13,11 @@ Tienda Virtual es una aplicación móvil desarrollada con React Native y Expo qu
 - [Uso](#uso)
 - [Contribución](#contribución)
 
-## Características
+## Características Destacadas
 1. **Autenticación de Usuarios:**
    - Registro e inicio de sesión de usuarios.
+      * Ofrece la capacidad de mostrar mensajes de error asociados con la entrada de datos.
+      * Los mensajes de error se pueden personalizar según los requisitos específicos del formulario.
 
 2. **Navegación y Categorías de Productos:**
    - Navegación entre pantallas y organización de productos por categorías.
@@ -36,13 +38,18 @@ Tienda Virtual es una aplicación móvil desarrollada con React Native y Expo qu
    - Funcionalidad para seleccionar o capturar una imagen para el perfil.
 
 8. **Vista previa del Mapa:** 
-   - Visualiza la ubicación en un mapa estático antes de realizar ciertas acciones, como confirmar la ubicación en tu perfil
+   - Visualiza la ubicación en un mapa estático antes de realizar ciertas acciones, como confirmar la ubicación en tu perfil.
 
 9. **Ubicación del Usuario:**
    - Recopilación y visualización de información sobre la ubicación del usuario.
 
 10. **Estilo Visual Agradable:**
    - Utiliza una paleta de colores consistente para una experiencia visual armoniosa y agradable.
+
+#### Tecnologías y Herramientas Utilizadas
+
+La aplicación hace uso de tecnologías modernas, como Redux para el manejo del estado global, integración con bases de datos SQLite para almacenamiento local y servicios Expo para funcionalidades avanzadas.
+
 
 ## Requisitos
 Asegúrate de tener instalados los siguientes componentes antes de comenzar:
@@ -57,10 +64,16 @@ Asegúrate de tener instalados los siguientes componentes antes de comenzar:
    - Para probar la aplicación en un dispositivo físico, instala Expo Go desde la tienda de aplicaciones de tu dispositivo.
 
 4. **Emulador :**
+
+    ![Android Studio](../My-Ecommerce-app/assets/ImgSdk/AndroidInst.png)
    - Configura un emulador de Android o iOS si planeas probar la aplicación en un entorno emulado.
 
+   - La instalación de Android Studio puede ser extensa, y para facilitar este proceso, se proporciona un material de apoyo. A continuación, se presenta una breve descripción, y puedes consultar la presentación completa en [Google Presentación](https://docs.google.com/presentation/d/1r9nS4tTdvPJyxgnNedTCrGHLT1zp7pEhlyICESBE8jc/edit?usp=sharing).
+
+   _Este material fue desarrollado por **Coder House** y el profesor **Pablo Macías**, y se utiliza aquí con sus respectivos créditos y permisos. Las imágenes de referencia presentadas en la presentación son propiedad de Coder House y se utilizan con fines educativos y de orientación aclarando que se modificó para evitar compartir todo el contenido original evitando difundir material privado._
+
 5. **Dependencias del Proyecto:**
-   - Después de clonar el repositorio, instala las dependencias locales ejecutando:
+   - Después de clonar el repositorio, instala las dependencias locales que puedes encontrar en el siguiente punto ejecutando:
      ```bash
      npm install + "el complemento"
      ```
@@ -112,6 +125,9 @@ Asegúrate de tener instalados los siguientes componentes antes de comenzar:
 
 7. **DevDependencies:**
    - Asegúrate de tener las devDependencies necesarias para desarrollo.
+8. **Permisos de Ubicación:**
+   - Asegúrate de que la aplicación tenga los permisos necesarios para acceder a la ubicación del dispositivo.
+   - Los usuarios deben otorgar permisos para que la aplicación funcione correctamente.
 
 ## Seguridad
 La seguridad es una consideración fundamental en nuestra aplicación. A continuación, se detallan algunas prácticas y consideraciones relacionadas con la seguridad:
@@ -133,9 +149,14 @@ Recuerda siempre seguir las mejores prácticas de seguridad y realizar auditorí
 ## Instalación
 1. Clona el repositorio.
 2. Instala las dependencias con `npm install`.
-3. Ejecuta la aplicación con `npm start`.
-4. Asegúrate de tener configurado un emulador o dispositivo físico para probar la aplicación.
-5. Para dispositivos físicos, asegúrate de tener Expo Go instalado y escanea el código QR generado.
+3. Configura la API de Google Maps:
+   Obtén una clave de API de Google Maps siguiendo las instrucciones en [Google Cloud Console](https://console.cloud.google.com/)
+4. Crea un archivo `.env` en la raíz del proyecto que incluya las clave que acceder al servicio API en Google Cloud.
+5. Configuración de API Key:
+   - Antes de utilizar el componente, asegúrate de configurar correctamente la API Key de Google Maps en el archivo LocationSelector.jsx tal cual como se configuro en el archivo `.env`. Esto es esencial para obtener datos de ubicación y mostrar el mapa estático.
+6. Ejecuta la aplicación con `npm start`.
+7. Asegúrate de tener configurado un emulador o dispositivo físico para probar la aplicación.
+8. Para dispositivos físicos, asegúrate de tener Expo Go instalado y escanea el código QR generado.
 
 ## Uso
 - **Autenticación de Usuarios:**
@@ -171,7 +192,7 @@ Recuerda siempre seguir las mejores prácticas de seguridad y realizar auditorí
 
 - **Ubicación del Usuario:**
 
-  La aplicación puede utilizar y mostrar información sobre tu ubicación. Observa cómo se integra la información de ubicación en diferentes secciones de la aplicación, como en tu perfil en donde puedes visualizar previamente antes de confirmar la ubicación un mapa de google maps.
+  La aplicación puede utilizar y mostrar información sobre tu ubicación. Observa cómo se integra la información de ubicación en diferentes secciones de la aplicación, como en tu perfil en donde puedes visualizar previamente antes de confirmar la ubicación un mapa estático utilizando la API de Google Maps.
 
 - **Cierre de Sesión:**
   Para el caso de salir de la aplicacion contamos con un botón que funciona para cerrar la sesión del usuario logueado para eliminar el registro o sesión activa.
