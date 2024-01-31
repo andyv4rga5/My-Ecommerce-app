@@ -202,4 +202,4 @@ Todas las contribuciones son bienvenidas. Abre un problema para discutir cambios
 
 ## Estructura de Carpetas
 A continuación se presenta la estructura de carpetas del proyecto para una posible orientación para futuros colaboradoes del proyecto:
-![Estructura de carpetas](../My-Ecommerce-app/assets/ImgSdk/estructuras.png)
+[Imagen de la estructura de carpetas](https://drive.google.com/file/d/1S_FL1oMu2PC-MWkGJNHpiCWrZ4WR08Vz/view?usp=sharing)
