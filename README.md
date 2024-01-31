@@ -1,5 +1,5 @@
 # Ecommerce de Tienda Virtual 
-![Icono](../My-Ecommerce-app/assets/icon.png){width=100px}
+![Icono App](../My-Ecommerce-app/assets/icon.png){width=100px}
 
 ## Descripción del Proyecto
 
@@ -199,4 +199,76 @@ Recuerda siempre seguir las mejores prácticas de seguridad y realizar auditorí
 
 ## Contribución
 Todas las contribuciones son bienvenidas. Abre un problema para discutir cambios importantes y sigue las reglas de estilo del proyecto.
+
+## Estructura de Carpetas
+A continuación se presenta la estructura de carpetas del proyecto para una posible orientación para futuros colaboradoes del proyecto:
+
+MY-ECOMMERCE-APP
+├── assets
+│   ├── fonts
+│   │   └── fuentes
+│   ├── img
+│   │   ├── AndroidInst
+│   │   └── splash
+│   ├── ImgSdk
+│   │   └── AndroidInst
+│   ├── adaptative-icon
+│   ├── favicon
+│   ├── icon
+│   ├── splash_.png
+│   └── splash
+├── src
+│   ├── navigation
+│   │   ├── AuthNavigator.jsx
+│   │   ├── CartNavigator.jsx
+│   │   ├── MainNavigator.jsx
+│   │   ├── OrdersNavigator.jsx
+│   │   ├── ProfileNavigator.jsx
+│   │   ├── ShopNavigator.jsx
+│   │   └── TabNavigator.jsx
+│   ├── screens
+│   │   ├── CartScreen.jsx
+│   │   ├── CategoriesScreen.jsx
+│   │   ├── ImageSelectorScreen.jsx
+│   │   ├── LoginScreen.jsx
+│   │   ├── OrdersScreen.jsx
+│   │   ├── ProductDetailScreen.jsx
+│   │   ├── ProductsByCategoryScreen.jsx
+│   │   ├── ProfileScreen.jsx
+│   │   └── SignupScreen.jsx
+│   ├── components
+│   │   ├── Card.jsx
+│   │   ├── Carousel.jsx
+│   │   ├── CartItem.jsx
+│   │   ├── CategoryItem.jsx
+│   │   ├── Headers.jsx
+│   │   ├── Input.jsx
+│   │   ├── LocationSelector.jsx
+│   │   ├── MapPreview.jsx
+│   │   ├── OrderItem.jsx
+│   │   └── ProductItem.jsx
+│   │   └── Search.jsx
+│   ├── db
+│   │   └── index.js
+│   ├── features
+│   │   ├── authSlice.jsx
+│   │   ├── cartSlice.jsx
+│   │   └── shopSlice.jsx
+│   ├── global
+│   │   └── colors.js
+│   ├── services
+│   │   ├── shopService.jsx
+│   │   └── authService.jsx
+│   ├── store
+│   │   └── index.js
+│   ├── validations
+│   │   └── signupSchema.js
+├── .gitignore
+├── App.js
+├── app.json
+├── balbel.config.js
+├── eas.json
+├── package-lock.json
+├── package.json
+└── package.json
 
