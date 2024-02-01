@@ -42,9 +42,9 @@ const OrdersScreen = () => {
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
             <Text style={styles.modalText}>Order: {orderSelected?.orderId}</Text>
-            <Text style={styles.modalText}>Item: {orderSelected?.cartItems[0]?.title}</Text> 
-            <Text style={styles.modalText}>Brand: {orderSelected?.cartItems[0]?.brand}</Text>
-            <Text style={styles.modalText}>Category: {orderSelected?.cartItems[0]?.category}</Text>
+            <Text style={styles.modalText}>Item: {orderSelected?.cartItems?.[0]?.title}</Text>
+            <Text style={styles.modalText}>Brand: {orderSelected?.cartItems?.[0]?.brand}</Text>
+            <Text style={styles.modalText}>Category: {orderSelected?.cartItems?.[0]?.category}</Text>
             <Text style={styles.modalText}>Total: ${orderSelected?.total}</Text>
             <Pressable
               style={[styles.button, styles.buttonClose]}
